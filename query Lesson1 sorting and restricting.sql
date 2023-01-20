@@ -101,6 +101,33 @@ where hire_date like '1994%'
 order by hire_date
 
 
+--Commands to be executed 
+alter table employees 
+alter column commission_pct decimal(2,2)
+
+
+
+update employees
+set commission_pct=.2
+where job_id in (15,16)
+
+update employees
+set commission_pct=.15
+where employee_id between 110 and 120
+
+update employees
+set commission_pct=.10
+where employee_id >=192
+
+
+update employees
+set commission_pct=.17
+where employee_id between 121 and 126
+------------------------------------------------------
+
+
+
+
 
 
 

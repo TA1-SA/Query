@@ -89,6 +89,9 @@ update courses
 set stid=20 where id=1
 
 
+alter table courses
+alter column course_name varchar(200)
+
 
 select * from courses
 select * from student
@@ -110,6 +113,9 @@ drop constraint FK__courses__stid__4F7CD00D
 alter table courses
 drop column stid
 
+
+alter table courses
+drop column stid
 
 
 create table enrolledCourses
@@ -134,4 +140,17 @@ from courses join enrolledCourses
 on courses.id=enrolledCourses.courseid
 join student 
 on student.id=enrolledCourses.studentId
+
+
+--disable constraint 
+alter table emp
+nocheck constraint [FK__EMP__DEPT_ID__4F7CD00D]
+
+
+
+
+--enable constraint 
+alter table emp
+check constraint [FK__EMP__DEPT_ID__4F7CD00D]
+
 
